@@ -1,11 +1,10 @@
-package pr1.a03;
+package pr1.a03;							//Dinitz 864398
 import java.io.PrintWriter;
 
 public class Hypothenuse {
 
 	public static void main(String[] args) {
 		PrintWriter out= new PrintWriter(System.out, true);
-		//printHypothenuse(3,4,4,6,out);
 		testHypothenuse(7,4,out);
 		
 		

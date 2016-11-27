@@ -1,4 +1,4 @@
-package pr1.a03;
+package pr1.a03;								//Dinitz 864398
 import schimkat.berlin.lernhilfe2016ws.io.DirtyFileWriter;
 import java.io.PrintWriter;
 import pr1.a02.Schachbrett;
