@@ -44,7 +44,7 @@ public class MoreMethods {
 		for (char c=startChar;c<startChar+anzahl;c++) {	
 			series+=c;//appends the current character to a string
 			count++;//increases the counter by 1
-			if(%10==0) {	//puts a new line every 10 characters and at the end ignoring the first character
+			if(count%10==0) {	//puts a new line every 10 characters and at the end ignoring the first character
 				series+="\n"; //appends a new line to the string 
 			}
 		}
@@ -58,3 +58,4 @@ public class MoreMethods {
 	}
 	
 }
+	
