@@ -1,14 +1,15 @@
-package pr1.a06;
+package pr1.a07;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Scanner;
 
+import pr1.a06.Person;
 import schimkat.berlin.lernhilfe2016ws.io.DirtyFileReader;
 import schimkat.berlin.lernhilfe2016ws.io.DirtyFileWriter;
-
-
 
 public class Personen {
 
@@ -16,10 +17,10 @@ public class Personen {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		PrintWriter out= new PrintWriter(System.out,true);
-		HashSet <Person> K =getPersonsFrom("./data/sportfreunde.txt");
-		printPersons(TvereinigtK(K),out);
-		out.println();
-		printPersons(K,out);
+		ArrayList<Person> test = createTestPersonliste();
+		printPersons(sortByName(test),out);
+		
+		
 	}
 
 	public static void printPersons(ArrayList <pr1.a06.Person> persons, PrintWriter out) {
@@ -55,8 +56,8 @@ public class Personen {
 
 
 
-	public static HashSet<pr1.a06.Person> getPersonsFrom(Scanner dataSource) {
-		HashSet<pr1.a06.Person> persons = new HashSet<pr1.a06.Person>();
+	public static ArrayList<pr1.a06.Person> getPersonsFrom(Scanner dataSource) {
+		ArrayList<pr1.a06.Person> persons = new ArrayList<pr1.a06.Person>();
 		while(dataSource.hasNext()) {
 			persons.add(createPerson(dataSource));
 		}
@@ -64,10 +65,10 @@ public class Personen {
 		return persons;
 	}
 
-	public static HashSet<pr1.a06.Person> getPersonsFrom(String filename) {
+	public static ArrayList<pr1.a06.Person> getPersonsFrom(String filename) {
 		DirtyFileReader file = new DirtyFileReader(filename);
 		Scanner dataSource = new Scanner (file);
-		HashSet<pr1.a06.Person> persons=getPersonsFrom(dataSource);
+		ArrayList<pr1.a06.Person> persons=getPersonsFrom(dataSource);
 		file.close();
 		dataSource.close();
 		return persons;
@@ -83,36 +84,50 @@ public class Personen {
 
 	}
 
-	public static HashSet <pr1.a06.Person> createTestPersonSet() {
+	public static ArrayList <pr1.a06.Person> createTestPersonSet() {
 		schimkat.berlin.lernhilfe2016ws.objectPlay.PersonSet testset = schimkat.berlin.lernhilfe2016ws.objectPlay.PersonFactory.createTestPersonSet();
-		HashSet<pr1.a06.Person> list = new HashSet <pr1.a06.Person> ();
+		ArrayList<pr1.a06.Person> list = new ArrayList <pr1.a06.Person> ();
 		for(schimkat.berlin.lernhilfe2016ws.objectPlay.Person p: testset) {
 			list.add(new pr1.a06.Person(p));
 		}
 		return list;
 	}
 
-	public static HashSet <Person> SundK (HashSet <Person> S, HashSet <Person> K) {
-		 HashSet <Person> vereinigt = new HashSet <Person>(S);
+	public static ArrayList <Person> SundK (ArrayList <Person> S, ArrayList <Person> K) {
+		ArrayList <Person> vereinigt = new ArrayList <Person>(S);
 		 vereinigt.retainAll(K);
 		return vereinigt;
 	}
 
-	public static HashSet <Person> KaberNichtS(HashSet <Person> S, HashSet <Person> K) {
-		HashSet <Person> kNichtS = new HashSet <Person>(K);
+	public static ArrayList <Person> KaberNichtS(HashSet <Person> S, ArrayList <Person> K) {
+		ArrayList <Person> kNichtS = new ArrayList <Person>(K);
 		kNichtS.removeAll(S);
 		return kNichtS;
 	}
 
-	public static HashSet <Person>  TvereinigtK(HashSet <Person>  K) {
+	public static ArrayList <Person>  TvereinigtK(ArrayList <Person>  K) {
 
-		HashSet <Person> vereinigt = new HashSet <Person>(K);
+		ArrayList <Person> vereinigt = new ArrayList <Person>(K);
 		vereinigt.addAll(createTestPersonSet());
 		return vereinigt;
 	}
 	
+	public static ArrayList<Person> sortByYear(ArrayList<Person> persons) {
+		Comparator<Person> com= new YearComperator();
+			persons.sort(com);
+			return persons;
+		}
 	
+	public static ArrayList<Person> sortByName(ArrayList<Person> persons) {
+		Comparator<Person> com= new NameComparator();
+		persons.sort(com);
+		return persons;
+	}
 
 
 	 
 }
+
+	
+	
+	
