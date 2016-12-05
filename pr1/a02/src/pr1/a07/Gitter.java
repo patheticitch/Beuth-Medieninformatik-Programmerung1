@@ -54,10 +54,10 @@ public class Gitter implements Drawable {
 		g.drawLine(0,0,0,1000);
 		g.drawLine(0,1000,1000,1000);
 		g.setColor(this.color);
-		for(int x=dx+20;x<=1000;x+=dx) {
+		for(int x=0;x<=1000;x+=dx) {
 			g.drawLine(x, 0, x, 1000);
 		}
-		for(int y=dy+20;y<=1000;y+=dy) {
+		for(int y=0;y<=1000;y+=dy) {
 			g.drawLine(0, y, 1000, y);
 		}
 		

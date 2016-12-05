@@ -1,14 +1,16 @@
 package pr1.a07.test;
 import java.awt.Graphics;
-
 import schimkat.berlin.lernhilfe2016ws.graphics.Drawable;
-
+import pr1.a07.Gitter;
 public class FirstGraphics implements Drawable {
 
 	@Override
 	public void draw(Graphics g) {
-		g.drawRect(11,50, 20, 40);
-		g.drawOval(34, 23, 20, 40);
+		g.drawOval(250,250, 40, 40);
+		g.drawOval(280, 250, 40, 40);
+		g.drawArc(260, 210, 100, 100, 250, 45);
+		
+		new Gitter(20,20).draw(g);
 		
 	}
 
