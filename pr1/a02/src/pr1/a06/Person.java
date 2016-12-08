@@ -1,7 +1,6 @@
 package pr1.a06;
 
 
-
 public class Person {
 	
 	private String Vorname;

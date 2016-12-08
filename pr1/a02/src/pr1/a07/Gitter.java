@@ -1,7 +1,8 @@
 package pr1.a07;
-import java.awt.Graphics;
-import schimkat.berlin.lernhilfe2016ws.graphics.Drawable;
 import java.awt.Color;
+import java.awt.Graphics;
+
+import schimkat.berlin.lernhilfe2016ws.graphics.Drawable;
 
 public class Gitter implements Drawable {
 	
