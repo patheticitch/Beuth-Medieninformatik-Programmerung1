@@ -27,8 +27,8 @@ public class RotatingPoint extends Point implements ChangingWithTime{
 	
 	@Override
 	public void changeTimeTo(double timeValue) {
-		this.x+=this.r*Math.cos(timeValue);
-		this.y+=this.r*Math.sin(timeValue);
+		x+=r*Math.cos(timeValue);
+		y+=r*Math.sin(timeValue);
 		
 	}
 	
