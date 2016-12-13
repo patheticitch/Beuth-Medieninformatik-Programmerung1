@@ -6,9 +6,7 @@ public class Test {
 	
 	
 	public static void main(String[] args) {
-		
 		DirtyPainter painter = new DirtyPainter();
-		
 		painter.add(new FirstGraphics());
 		painter.showDrawing();
 	}

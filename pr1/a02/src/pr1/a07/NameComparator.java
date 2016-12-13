@@ -7,9 +7,6 @@ public class NameComparator implements Comparator<Person> {
 
 	@Override
 	public int compare(Person o1, Person o2) {
-		
-		return o1.getNachname().compareTo(o2.getNachname())-o2.getNachname().compareTo(o1.getNachname());
-		
-
-}
+		return o1.getNachname().compareTo(o2.getNachname());
+	}
 }

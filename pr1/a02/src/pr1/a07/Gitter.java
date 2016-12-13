@@ -29,6 +29,7 @@ public class Gitter implements Drawable {
 		this.dx=dx;
 		this.dy=dy;
 		
+		
 	}
 	
 	public int getDx() {
@@ -51,9 +52,6 @@ public class Gitter implements Drawable {
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.BLUE);
-		g.drawLine(0,0,0,1000);
-		g.drawLine(0,1000,1000,1000);
 		g.setColor(this.color);
 		for(int x=0;x<=1000;x+=dx) {
 			g.drawLine(x, 0, x, 1000);
@@ -61,6 +59,11 @@ public class Gitter implements Drawable {
 		for(int y=0;y<=1000;y+=dy) {
 			g.drawLine(0, y, 1000, y);
 		}
+		g.setColor(Color.BLUE);
+		g.drawLine(0,0,0,1000);
+		g.drawLine(0,1000,1000,1000);
+		
+		
 		
 	}
 

@@ -9,11 +9,4 @@ public class YearComperator implements Comparator<Person>  {
 		return o1.getGeburtsjahr()-o2.getGeburtsjahr();
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 }
